@@ -21,7 +21,7 @@
                 <h4> {{ product.category }} </h4>
             </div>
             <div *ngIf="product.rating; else noRating">
-                <h4>Rated {{ product.rating.rate || 0 }} by {{ product.rating?.count || 0 }} customers.</h4>
+                <h4>Rated {{ product.rating.rate || 0 }} by {{ product.rating.count || 0 }} customers.</h4>
             </div>
             <ng-template #noRating>
                 <h4>Not yet rated.</h4>
