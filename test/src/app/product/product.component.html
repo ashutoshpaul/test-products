@@ -1,0 +1,31 @@
+<ng-container *ngIf="product$ | async as product">
+    <div class="body">
+        <div class="left">
+            <img src="{{product.image}}" alt="" width="300px" height="300px">
+        </div>
+        <div class="right">
+            <div class="row">
+                <h3>Title:</h3>
+                <h4> {{ product.title }} </h4>
+            </div>
+            <div class="row">
+                <h3>Price:</h3>
+                <h4> Rs.{{ product.price }} </h4>
+            </div>
+            <div class="row">
+                <h3>Description:</h3>
+                <h4> {{ product.description }} </h4>
+            </div>
+            <div class="row">
+                <h3>Category:</h3>
+                <h4> {{ product.category }} </h4>
+            </div>
+            <div *ngIf="product.rating; else noRating">
+                <h4>Rated {{ product.rating.rate || 0 }} by {{ product.rating?.count || 0 }} customers.</h4>
+            </div>
+            <ng-template #noRating>
+                <h4>Not yet rated.</h4>
+            </ng-template>
+        </div>
+    </div>
+</ng-container>

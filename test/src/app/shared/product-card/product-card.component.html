@@ -1,0 +1,6 @@
+<div *ngIf="product" (click)="onClick(product)" class="product-card">
+    <div>
+        <img src="{{ product.image }}" alt="" width="200px" height="200px">
+    </div>
+    <div> {{ product.title }} </div>
+</div>

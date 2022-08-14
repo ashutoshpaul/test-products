@@ -1,0 +1,13 @@
+<div *ngIf="categories$ | async as categories;" class="categories">
+    <ng-container *ngFor="let category of categories">
+        <div 
+            class="category"
+            [ngClass]="{'active': isCategorySelected(category)}"
+            (click)="onSelectCategory(category)"> {{ category }} </div>
+    </ng-container>
+</div>
+<div *ngIf="products$ | async as products;" class="products">
+    <ng-container *ngFor="let product of products">
+        <app-product-card [product]="product">loading</app-product-card>
+    </ng-container>
+</div>
